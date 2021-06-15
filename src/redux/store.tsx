@@ -1,9 +1,17 @@
 import {createStore, compose, applyMiddleware} from "redux";
-import reducers from './reducers/index';
+import reducers from './reducers';
 import createSagaMiddleware from "redux-saga";
-import rootSaga from "./sagas/index";
+import rootSaga from "./sagas";
 
 const sagaMiddleware = createSagaMiddleware();
+
+// This line only because of typescript syntax
+declare global {
+    interface Window {
+        __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
+    }
+}
+//
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 

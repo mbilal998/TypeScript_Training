@@ -1,15 +1,17 @@
 import React, {useEffect} from "react";
 import axios from "axios";
 import {useParams} from "react-router-dom";
-import {useDispatch, useSelector} from "react-redux";
+import {RootStateOrAny, useDispatch, useSelector} from "react-redux";
 import {selectedProductId, removeSelectedProduct} from "../redux/actions/productActions";
+import { RootState } from "../redux/reducers";
+import {type} from "os";
 
 const ProductDetail = () => {
 
     const dispatch = useDispatch();
 
-    const {productId} = useParams();
-    const product = useSelector((state) => state.product);
+    const { productId }:any = useParams();
+    const product = useSelector((state: RootState) => state.product);
     const { image, title, price, category, description } = product;
 
     useEffect(() => {
@@ -38,7 +40,7 @@ const ProductDetail = () => {
                                 </h2>
                                 <h3 className="ui brown block header">{category}</h3>
                                 <p>{description}</p>
-                                <div className="ui vertical animated button" tabIndex="0">
+                                <div className="ui vertical animated button" tabIndex={0}>
                                     <div className="hidden content">
                                         <i className="shop icon"></i>
                                     </div>

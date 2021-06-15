@@ -6,7 +6,7 @@ export const getProducts = () => {
     };
 };
 
-export const selectedProductId = (id) => {
+export const selectedProductId = (id:any) => {
     return {
         type: ActionTypes.SELECTED_PRODUCT_ID,
         payload: id

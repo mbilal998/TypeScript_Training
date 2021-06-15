@@ -7,4 +7,6 @@ const reducers = combineReducers({
     productId: selectProductIdReducer
 });
 
+export type RootState = ReturnType<typeof reducers>
+
 export default reducers;

@@ -8,7 +8,7 @@ const selectedId = {
     id: ''
 }
 
-export const productReducer = (state = initialState, {type, payload}) => {
+export const productReducer = (state = initialState, {type, payload}:any) => {
     switch (type){
         case ActionTypes.GET_PRODUCTS:
             return {
@@ -24,7 +24,7 @@ export const productReducer = (state = initialState, {type, payload}) => {
     }
 }
 
-export const selectProductIdReducer = (state = selectedId, {type, payload}) => {
+export const selectProductIdReducer = (state = selectedId, {type, payload}:any) => {
     switch (type){
         case ActionTypes.SELECTED_PRODUCT_ID:
             return {
@@ -36,7 +36,7 @@ export const selectProductIdReducer = (state = selectedId, {type, payload}) => {
     }
 }
 
-export const selectedProductReducer = (state = {}, {type, payload}) => {
+export const selectedProductReducer = (state = {}, {type, payload}:any) => {
     switch (type){
         case ActionTypes.SELECTED_PRODUCT:
             return {

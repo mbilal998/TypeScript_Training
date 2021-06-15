@@ -1,12 +1,13 @@
 import React from "react";
 import {useSelector} from "react-redux";
 import {Link} from "react-router-dom";
+import {RootState} from "../redux/reducers";
 
 const ProductComponent = () => {
 
-    const products = useSelector((state) => state.allProducts.products);
+    const products = useSelector((state: RootState) => state.allProducts.products);
 
-    const productList = products.map((product) => {
+    const productList = products.map((product: any) => {
         const {id, title, image, price, category} = product;
         return (
             <div className="four wide column" key={id}>
